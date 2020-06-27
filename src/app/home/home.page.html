@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Oinkoff
+    </ion-title>
+    <ion-buttons [routerLink]="['/info']" slot="end">
+      <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="centerImage">
+    <img src="./assets/shapes.svg">
+  </div>
+
+  <ion-card>
+    <ion-item lines="none">
+      <ion-card-title><ion-input [(ngModel)]="numberPlayers" placeholder="Number of Players"></ion-input></ion-card-title>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item lines="none">
+      <ion-card-title><ion-input [(ngModel)]="winningScore" placeholder="Winning Score"></ion-input></ion-card-title>
+    </ion-item>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="play()">
+      <ion-icon name="play"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

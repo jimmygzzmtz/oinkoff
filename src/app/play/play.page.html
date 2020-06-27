@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Play</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="">
+    <img src="{{this.image1}}" id="image1">
+  </div>
+
+  <div class="">
+    <img src="{{this.image2}}" id="image2">
+  </div>
+
+  <ion-card>
+    <ion-item lines="none">
+      <ion-card-title>Player {{this.currentPlayer + 1}}'s turn</ion-card-title>
+      <ion-button fill="outline" slot="end" (click)="roll()">
+          <ion-icon name="arrow-up"></ion-icon>
+      </ion-button>
+      <ion-button fill="outline" color="danger" slot="end" (click)="pass()">
+          <ion-icon name="arrow-redo"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-card-content>
+      <ion-label>{{this.score}}</ion-label>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list inset="true">
+    <ion-list-header>
+      Scores
+    </ion-list-header>
+
+    <ion-item *ngFor="let player of players">
+      <ion-label>
+        <h2>{{player.name}}</h2>
+        <p>{{player.score}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
